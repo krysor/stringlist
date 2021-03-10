@@ -2,11 +2,33 @@ package stringlists;
 
 import java.util.Arrays;
 
+/**
+ * Each instance of this class represents a sequenze of strings.
+ * 
+ * @invar | getElements() != null
+ * @invar | Arrays.stream(getElements()).allMatch(e -> e != null) 
+ */
 public class StringList {
 
+	/**
+	 * @invar | elements != null
+	 * @invar | Arrays.stream(elements).allMatch(e -> e != null)
+	 * 
+	 * @representationObject
+	 */
 	private String[] elements;
 	
+	/**
+	 * Returns elements of this string list as an array.
+	 * 
+	 * @creates | result
+//	 * 
+//	 * The client shall not mutate the result array.
+//	 * 
+//	 * The result array may change as the result of changes to this StringList.
+	 */
 	public String[] getElements() { return elements.clone(); }
+//	public String[] getElements() { return elements; }
 	
 	public String getConcatenation() {
 		if (elements.length == 0)
